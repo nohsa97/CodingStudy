@@ -25,14 +25,14 @@ int main()
 	int set = 0;
 	int count = 0;
 	int arr[10];
-	for (i = 1; i <= 401; i++)
+	for (i = 999900; i <= 999999; i++)
 	{
 		k = 0;
 		j = i;
 		while(1)
 		{
 			j = j % (int)(pow(10,k+1))/(int)(pow(10, k));
-			if (j == 0)
+			if (j == 0 && i/(int)(pow(10, k)) ==0)
 				break;
 			arr[k] = j;
 			k++;
