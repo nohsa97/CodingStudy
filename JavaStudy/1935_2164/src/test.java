@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
-public class p1935  {
+public class test  {
 	static int i, j, C, index;  // C= 카운팅
 	static double a, b, result, S;  //s= 세이브 
 
