@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 public class p2164 {
 
-	static int i, j, b;
+	static int i, j;
 	
 	public static void main (String [] args) throws IOException
 	{
@@ -16,12 +16,11 @@ public class p2164 {
 		while(true)
 		{
 			IQ.poll();
-			b=IQ.poll();
-			IQ.add(b);
-			if(IQ.size()==1)
+			IQ.add(IQ.poll());
+		if(IQ.size()==1)
 				break;
 		}
 		System.out.print(IQ.poll());
-		br.close();
+
 	}
 }
