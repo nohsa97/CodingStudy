@@ -27,28 +27,31 @@ public class p2493 {
 		
 		for( i = 0; i<FirstInput; i++)
 			arr[i] = Integer.parseInt(st.nextToken());
-		
 		i=0;
 		while(true)
 		{
 			if(Stack.isEmpty())
 			{
-				Result[i]=0;
-				Top.Height=arr[i];
-				Top.Index=i;
+				Top.Height = arr[i];
+				Top.Index = i+1;
 				Stack.push(Top);
+				Result [i]=0;
+				System.out.printf("빌 공 %d번째실행, Id : %d , 높이 : %d \n", i , Stack.peek().Index,Stack.peek().Height);
 				i++;
 			}
-			else if(Stack.peek()>arr[i])
+			else if(Stack.peek().Height>arr[i])
 			{
-				Result[i]=Stack.size()+Count;
-				Stack.push(arr[i]);
+				Result [i]=Stack.peek().Index;
+				Top.Height = arr[i];
+				Top.Index = i+1;
+				Stack.push(Top);
+				System.out.printf("%d번째실행, Id : %d , 높이 : %d \n", i , Stack.peek().Index,Stack.peek().Height);
 				i++;
 			}
-			else if(Stack.peek()<arr[i])
+			else if(Stack.peek().Height<arr[i])
 			{
+				System.out.printf("팝 %d \n",Stack.peek().Height);
 				Stack.pop();
-				Count=i;
 			}
 			
 			if(i==FirstInput)
