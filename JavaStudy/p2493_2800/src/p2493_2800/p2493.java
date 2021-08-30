@@ -39,7 +39,7 @@ public class p2493 {
 				System.out.printf("빌 공 %d번째실행, Id : %d , 높이 : %d \n", i , Stack.peek().Index,Stack.peek().Height);
 				i++;
 			}
-			else if(Stack.peek().Height>arr[i])
+			 if(Stack.peek().Height>arr[i])
 			{
 				Result [i]=Stack.peek().Index;
 				Top.Height = arr[i];
@@ -63,3 +63,38 @@ public class p2493 {
 			System.out.print(Result[i]);
 	}
 }
+
+/*public class p2493 {
+	static int FirstInput;
+	static String SecondInput;
+
+	static int i;
+	public static void main(String[]args) throws IOException
+	{
+		BufferedReader br = new  BufferedReader(new InputStreamReader(System.in));
+		
+		FirstInput=Integer.parseInt(br.readLine());
+		int arr [] = new int [FirstInput];
+		int Result [] = new int [FirstInput];
+		
+		SecondInput = br.readLine();
+		StringTokenizer st = new StringTokenizer(SecondInput);
+		
+		for( i = 0; i<FirstInput; i++)
+			arr[i] = Integer.parseInt(st.nextToken());
+		
+		for( i=0 ; i<FirstInput; i++)
+		{
+			
+			for(int j=0 ;j<i ;j++)
+			{
+				if(arr[i]<arr[j])
+					Result[i]=j+1;
+			}
+			
+		}
+		
+		for(i=0 ; i<FirstInput; i++)
+			System.out.print(Result[i]);
+	}
+}*/
