@@ -3,6 +3,12 @@ package p2493_2800;
 import java.util.*;
 import java.io.*;
 
+	class Top
+	{
+		int Index;
+		int Height;
+	}
+
 public class p2493 {
 	static int FirstInput;
 	static String SecondInput;
@@ -10,11 +16,11 @@ public class p2493 {
 	public static void main(String[]args) throws IOException
 	{
 		BufferedReader br = new  BufferedReader(new InputStreamReader(System.in));
-		
+		Top Top = new Top();
 		FirstInput=Integer.parseInt(br.readLine());
 		int arr [] = new int [FirstInput];
 		int Result [] = new int [FirstInput];
-		Stack<Integer> Stack = new Stack<>();
+		Stack<Top> Stack = new Stack<>();
 		
 		SecondInput = br.readLine();
 		StringTokenizer st = new StringTokenizer(SecondInput);
@@ -28,7 +34,9 @@ public class p2493 {
 			if(Stack.isEmpty())
 			{
 				Result[i]=0;
-				Stack.push(arr[i]);
+				Top.Height=arr[i];
+				Top.Index=i;
+				Stack.push(Top);
 				i++;
 			}
 			else if(Stack.peek()>arr[i])
